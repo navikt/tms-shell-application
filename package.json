@@ -1,7 +1,7 @@
 {
-  "name": "tms-min-side",
+  "name": "tms-shell-application",
   "version": "1.0.0",
-  "description": "min side",
+  "description": "shell application",
   "main": "index.js",
   "scripts": {
     "start": "rollup -c rollup.config.dev.js -w",
@@ -20,8 +20,6 @@
     "babel": "6.23.0",
     "less": "4.1.1",
     "postcss": "8.2.8",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
     "rollup": "2.41.1",
     "rollup-plugin-livereload": "2.0.0",
     "rollup-plugin-postcss": "4.0.0",
@@ -29,17 +27,6 @@
     "rollup-plugin-serve": "1.1.0"
   },
   "dependencies": {
-    "classnames": "2.2.6",
-    "lodash.throttle": "4.1.1",
-    "nav-frontend-core": "5.0.11",
-    "nav-frontend-js-utils": "1.0.17",
-    "nav-frontend-knapper": "2.0.32",
-    "nav-frontend-knapper-style": "1.0.17",
-    "nav-frontend-paneler": "2.0.32",
-    "nav-frontend-paneler-style": "1.0.2",
-    "nav-frontend-typografi": "3.0.4",
-    "nav-frontend-typografi-style": "1.0.35",
-    "prop-types": "15.7.2",
     "react-router-dom": "5.2.0"
   }
 }
