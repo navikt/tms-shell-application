@@ -3,9 +3,6 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
 import importmap from "@eik/rollup-plugin";
-import postcss from "rollup-plugin-postcss";
-import postcssLessLoader from "rollup-plugin-postcss-webpack-alias-less-loader";
-import path from "path";
 
 export default {
   input: "src/index.js",
@@ -31,15 +28,6 @@ export default {
     }),
     commonjs({
       include: ["node_modules/**"],
-    }),
-    postcss({
-      extract: path.resolve("dist/bundle.prod.css"),
-      loaders: [
-        postcssLessLoader({
-          nodeModulePath: "./node_modules",
-          aliases: {},
-        }),
-      ],
     }),
   ],
 };

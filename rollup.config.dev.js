@@ -4,8 +4,6 @@ import babel from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
-import postcss from "rollup-plugin-postcss";
-import postcssLessLoader from "rollup-plugin-postcss-webpack-alias-less-loader";
 import importmap from "@eik/rollup-plugin";
 
 export default {
@@ -32,15 +30,6 @@ export default {
     }),
     commonjs({
       include: ["node_modules/**"],
-    }),
-    postcss({
-      extract: false,
-      loaders: [
-        postcssLessLoader({
-          nodeModulePath: "./node_modules",
-          aliases: {},
-        }),
-      ],
     }),
     serve({
       open: true,
