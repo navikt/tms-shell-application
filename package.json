@@ -6,7 +6,8 @@
   "scripts": {
     "start": "rollup -c rollup.config.dev.js -w",
     "build": "rollup -c rollup.config.prod.js --file dist/bundle.esm.js --format esm",
-    "dev-express": "nodemon server.js"
+    "dev-express": "nodemon server.js",
+    "start-express": "node server.js"
   },
   "author": "navikt",
   "license": "MIT",

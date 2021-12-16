@@ -1,0 +1,6 @@
+{
+    "app": "tms-shell-application",
+    "namespace": "personbruker",
+    "team": "personbruker",
+    "ingresses": ["https://tms-shell-application.dev.nav.no"]
+}
