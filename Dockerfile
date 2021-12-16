@@ -6,7 +6,9 @@ COPY index.html .
 COPY package.json .
 COPY server.js .
 COPY dist .
-COPY node_modules .
+
+RUN npm ci
+RUN npm run build
 
 EXPOSE 8080:8080
 CMD ["npm", "run", "start-express"]
