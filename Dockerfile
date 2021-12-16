@@ -1,14 +1,12 @@
-FROM node:14-alpine
+FROM node:16-alpine
 
 WORKDIR /usr/src/app
 
-COPY index.html .
-COPY package.json .
+COPY dist ./dist
+COPY node_modules ./node_modules
 COPY server.js .
-COPY dist .
-
-RUN npm ci
-RUN npm run build
+COPY package.json .
+COPY index.html .
 
 EXPOSE 8080:8080
 CMD ["npm", "run", "start-express"]
