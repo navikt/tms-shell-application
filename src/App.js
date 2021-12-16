@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" render={() => renderMicrofrontend(() => <p>Min Side</p>)} />
+        <Route path="/" render={() => renderMicrofrontend(() => <p>MicroFrontend</p>)} />
       </Switch>
     </Router>
   );
