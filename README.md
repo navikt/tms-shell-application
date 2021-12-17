@@ -1,4 +1,4 @@
-tms-shell-application
+tms-shell
 ================
 
 Shell for mikrofrontend-oppsettet til Min Side.

@@ -1,7 +1,7 @@
 {
-  "name": "tms-shell-application",
+  "name": "tms-shell",
   "version": "1.0.0",
-  "description": "shell application",
+  "description": "shell app for min-side",
   "main": "index.js",
   "scripts": {
     "start": "rollup -c rollup.config.dev.js -w",
