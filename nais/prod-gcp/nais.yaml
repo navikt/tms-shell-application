@@ -9,14 +9,14 @@ spec:
   image: {{version}}
   port: 7150
   liveness:
-    path: /tms-min-side/internal/isAlive
+    path: /min-side/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /tms-min-side/internal/isReady
+    path: /min-side/internal/isReady
     initialDelay: 10
   prometheus:
     enabled: true
-    path: /tms-min-side/internal/metrics
+    path: /min-side/internal/metrics
   replicas:
     min: 2
     max: 4
