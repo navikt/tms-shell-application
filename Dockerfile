@@ -1,12 +1,14 @@
 FROM node:16-alpine
+ENV NODE_ENV production
 
-WORKDIR /usr/src/app
+WORKDIR usr/src/app
+COPY server server/
+COPY dist dist/
 
-COPY dist ./dist
-COPY node_modules ./node_modules
-COPY server.js .
-COPY package.json .
-COPY index.html .
+WORKDIR server
+RUN npm install
 
-EXPOSE 8080:8080
-CMD ["npm", "run", "start-express"]
+CMD ["node", "./server.js"]
+
+ENV PORT=7150
+EXPOSE $PORT

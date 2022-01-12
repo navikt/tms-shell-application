@@ -1,6 +1,0 @@
-{
-    "app": "tms-shell",
-    "namespace": "min-side",
-    "team": "min-side",
-    "ingresses": ["https://person.dev.nav.no/min-side"]
-}
