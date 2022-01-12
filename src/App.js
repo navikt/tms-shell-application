@@ -1,6 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
+import { minSideUrl } from "./urls";
+
+const MinSide = React.lazy(() =>
+  import(minSideUrl)
+);
 
 const renderMicrofrontend = (Microfrontend) => {
   return (
@@ -14,7 +19,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" render={() => renderMicrofrontend(() => <p>MicroFrontend</p>)} />
+        <Route path="/min-side" exact render={() => renderMicrofrontend(MinSide)} />
       </Switch>
     </Router>
   );
