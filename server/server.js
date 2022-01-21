@@ -1,20 +1,13 @@
 const express = require('express');
-const mustacheExpress = require('mustache-express');
+const logger = require('./logger');
 const path = require('path');
-const getDecorator = require('./dekorator');
+const getHtmlWithDecorator = require('./dekorator');
 const basePath = '/min-side';
 const buildPath = path.resolve(__dirname, '../dist');
 const server = express();
 
-server.set('views', `${__dirname}/../dist`);
-server.set('view engine', 'mustache');
-server.engine('html', mustacheExpress());
-
 server.use(express.json());
-server.use((req, res, next) => {
-    res.removeHeader('X-Powered-By');
-    next();
-});
+server.disable('x-powered-by');
 
 server.use(
     basePath,
@@ -33,13 +26,13 @@ server.get(`${basePath}/internal/isReady`, async (req, res) => {
 
 // Match everything except internal og static
 server.use(/^(?!.*\/(internal|static)\/).*$/, (req, res) =>
-    getDecorator()
-        .then((fragments) => {
-            res.render('index.html', fragments);
+    getHtmlWithDecorator(`${buildPath}/index.html`)
+        .then((html) => {
+            res.send(html);
         })
         .catch((e) => {
-            const error = `Failed to get decorator: ${e}`;
-            res.status(500).send(error);
+            logger.error(e);
+            res.status(500).send(e);
         })
 );
 
