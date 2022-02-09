@@ -6,7 +6,7 @@ metadata:
     labels:
         team: min-side
 spec:
-    image: { { version } }
+    image: {{version}}
     port: 7150
     liveness:
         path: /min-side/internal/isAlive
