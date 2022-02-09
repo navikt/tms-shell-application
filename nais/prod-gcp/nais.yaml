@@ -1,31 +1,28 @@
-apiVersion: "nais.io/v1alpha1"
-kind: "Application"
+apiVersion: 'nais.io/v1alpha1'
+kind: 'Application'
 metadata:
-  name: tms-shell
-  namespace: min-side
-  labels:
-    team: min-side
+    name: tms-shell
+    namespace: min-side
+    labels:
+        team: min-side
 spec:
-  image: {{version}}
-  port: 7150
-  liveness:
-    path: /min-side/internal/isAlive
-    initialDelay: 10
-  readiness:
-    path: /min-side/internal/isReady
-    initialDelay: 10
-  prometheus:
-    enabled: true
-    path: /min-side/internal/metrics
-  replicas:
-    min: 2
-    max: 4
-  ingresses:
-    - "https://person.intern.nav.no/min-side"
-  resources:
-    limits:
-      cpu: "3"
-      memory: 768Mi
-    requests:
-      cpu: "50m"
-      memory: 256Mi
+    image: { { version } }
+    port: 7150
+    liveness:
+        path: /min-side/internal/isAlive
+        initialDelay: 10
+    readiness:
+        path: /min-side/internal/isReady
+        initialDelay: 10
+    replicas:
+        min: 2
+        max: 4
+    ingresses:
+        - 'https://person.intern.nav.no/min-side'
+    resources:
+        limits:
+            cpu: '3'
+            memory: 768Mi
+        requests:
+            cpu: '50m'
+            memory: 256Mi
